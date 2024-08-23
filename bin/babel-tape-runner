@@ -1,18 +1,15 @@
 #!/usr/bin/env node
 
+require('core-js/stable')
 require('@babel/register')
-require('@babel/polyfill')
-var path = require('path')
-var glob = require('glob')
+const path = require('path')
+const glob = require('glob')
 
-process.argv.slice(2).forEach(function (arg) {
-  glob(arg, function (er, files) {
+process.argv.slice(2).forEach(arg => {
+  glob(arg, (er, files) => {
     if (er) throw er
-
-    files.forEach(function (file) {
+    files.forEach(file => {
       require(path.resolve(process.cwd(), file))
     })
   })
 })
-
-// vim: ft=javascript
