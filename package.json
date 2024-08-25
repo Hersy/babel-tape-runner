@@ -1,41 +1,51 @@
 {
-  "name": "babel-tape-runner",
-  "version": "3.0.0",
-  "description": "Babel + Tape for running your ES Next tests",
-  "bin": "./bin/babel-tape-runner",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wavded/babel-tape-runner.git"
-  },
-  "scripts": {
-    "pretest": "cp .testbabelrc .babelrc",
-    "test": "standard bin/babel-tape-runner test.js && node bin/babel-tape-runner test.js",
-    "posttest": "rm .babelrc"
-  },
+  "name": "@hersy/babel-tape-runner",
+  "version": "1.0.0",
+  "description": "Babel 7.25 + Tape for running your ESNext tests",
   "keywords": [
+    "hersy",
     "babel",
     "tape",
     "tests",
-    "testing",
-    "harmony",
-    "es6",
     "esnext"
   ],
-  "author": "Marc Harter <wavded@gmail.com>",
-  "license": "MIT",
+  "homepage": "https://github.com/hersy/babel-tape-runner",
   "bugs": {
-    "url": "https://github.com/wavded/babel-tape-runner/issues"
+    "url": "https://github.com/hersy/babel-tape-runner/issues"
   },
-  "homepage": "https://github.com/wavded/babel-tape-runner",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hersy/babel-tape-runner.git"
+  },
+  "license": "MIT",
+  "author": "Hersy <hersy@hersy.org>",
+  "bin": {
+    "babel-tape-runner": "./bin/babel-tape-runner"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "pretest": "cp .testbabelrc .babelrc",
+    "test": "standard ./bin/babel-tape-runner ./test.js && node ./bin/babel-tape-runner ./test.js",
+    "posttest": "rm .babelrc"
+  },
   "dependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "glob": "^6.0.1"
+    "@babel/core": "^7.25.0",
+    "@babel/register": "^7.24.0",
+    "core-js": "^3.38.0",
+    "glob": "^9.3.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.0.0",
-    "standard": "^12.0.1",
-    "tape": "^4.0.2"
-  }
+    "@babel/preset-env": "^7.25.0",
+    "standard": "^17.1.0",
+    "tape": "^5.8.0"
+  },
+  "resolutions": {
+    "@humanwhocodes/config-array": "yarn:@eslint/config-array@^0.17.0",
+    "@humanwhocodes/object-schema": "yarn:@eslint/object-schema@^2.1.0",
+    "glob": "^9.3.0",
+    "rimraf": "^4.0.0"
+  },
+  "packageManager": "yarn@1.22.22"
 }
