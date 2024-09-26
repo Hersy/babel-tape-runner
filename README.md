@@ -29,20 +29,6 @@ Then add this line:
 export GITHUB_TOKEN="<Your Token>"
 ```
 
-### Install the package
-
-Now you can run either:
-
-```bash
-npm install --save @ittidigital/eslint-config-muv
-```
-
-or
-
-```bash
-yarn add -D @ittidigital/eslint-config-muv
-```
-
 ### Resolve to GitHub Package Registry
 
 Locate or create your NPM configuration file, usually saved on **./.npmrc** , it should contain the following:
